@@ -17,7 +17,7 @@
       ? customBankInput.value
       : bankSelect.value;
 
-    const url = "https://script.google.com/macros/s/AKfycbzR5Lxj-rFZevhgy3TCBRz6qXLbFwH9GVbGhKRa2wo1lz1tjNPe0hq5kAB0FhOXzXXg1g/exec";
+    const url = "https://script.google.com/macros/s/AKfycbxjStE_nqZ8q7916q5BtyFQmvNw0y8dnvO8bbSyRqvpnr11NUukHV7Q0K20Nw3GNFlG/exec";
 
     fetch(url, {
       method: 'POST',
